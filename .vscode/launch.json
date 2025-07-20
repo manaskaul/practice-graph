@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "GraphTraversal",
+            "request": "launch",
+            "mainClass": "traversal.GraphTraversal",
+            "projectName": "graphs_d7e248bc",
+            "cwd": "${workspaceFolder}",
+            "args": "",
+            "classPaths": [
+                "${workspaceFolder}/out"
+            ],
+            "preLaunchTask": "javac-build"
+        },
+        {
+            "type": "java",
+            "name": "GraphRepresentation",
+            "request": "launch",
+            "mainClass": "represent.GraphRepresentation",
+            "projectName": "graphs_d7e248bc",
+            "cwd": "${workspaceFolder}",
+            "args": "",
+            "classPaths": [
+                "${workspaceFolder}/out"
+            ],
+            "preLaunchTask": "javac-build"
+        }
+    ]
+}
