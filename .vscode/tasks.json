@@ -8,9 +8,10 @@
             "args": [
                 "-d",
                 "out",
-                "represent/*.java",
-                "structure/*.java",
-                "traversal/*.java"
+                "topic0_structure/*.java",
+                "topic1_represent/*.java",
+                "topic2_traversal/*.java",
+                "topic3_minimum_spanning_tree/*.java"
             ],
             "group": "build",
             "problemMatcher": ["$javac"]

@@ -3,9 +3,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "GraphTraversal",
+            "name": "GraphRepresentation",
             "request": "launch",
-            "mainClass": "traversal.GraphTraversal",
+            "mainClass": "topic1_representation.GraphRepresentation",
             "projectName": "graphs_d7e248bc",
             "cwd": "${workspaceFolder}",
             "args": "",
@@ -16,9 +16,9 @@
         },
         {
             "type": "java",
-            "name": "GraphRepresentation",
+            "name": "GraphTraversal",
             "request": "launch",
-            "mainClass": "represent.GraphRepresentation",
+            "mainClass": "topic2_traversal.GraphTraversal",
             "projectName": "graphs_d7e248bc",
             "cwd": "${workspaceFolder}",
             "args": "",
