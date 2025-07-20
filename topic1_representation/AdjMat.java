@@ -13,6 +13,8 @@ public class AdjMat implements GraphInterface<Unit> {
 
     public AdjMat(int nodes) {
         this.graph = new ArrayList<>();
+        this.list = new ArrayList<>();
+
         for (int i = 0; i < nodes; i++) {
             List<Unit> graphRow = new ArrayList<>();
             for (int j = 0; j < nodes; j++) {

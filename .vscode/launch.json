@@ -6,26 +6,21 @@
             "name": "GraphRepresentation",
             "request": "launch",
             "mainClass": "topic1_representation.GraphRepresentation",
-            "projectName": "graphs_d7e248bc",
-            "cwd": "${workspaceFolder}",
-            "args": "",
-            "classPaths": [
-                "${workspaceFolder}/out"
-            ],
-            "preLaunchTask": "javac-build"
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
+            "name": "MinimumSpanningTree",
+            "request": "launch",
+            "mainClass": "topic3_minimum_spanning_tree.MinimumSpanningTree",
+            "projectName": "practice-graphs_7da68bc0"
         },
         {
             "type": "java",
             "name": "GraphTraversal",
             "request": "launch",
             "mainClass": "topic2_traversal.GraphTraversal",
-            "projectName": "graphs_d7e248bc",
-            "cwd": "${workspaceFolder}",
-            "args": "",
-            "classPaths": [
-                "${workspaceFolder}/out"
-            ],
-            "preLaunchTask": "javac-build"
+            "projectName": "practice-graphs_7da68bc0"
         }
     ]
 }
