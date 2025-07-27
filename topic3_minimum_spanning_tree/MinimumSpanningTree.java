@@ -1,28 +1,24 @@
 package topic3_minimum_spanning_tree;
 
+import java.util.List;
+
 public class MinimumSpanningTree {
     public static void main(String[] args) {
+        List<List<Integer>> edges = List.of(
+            List.of(0, 1, 2),
+            List.of(0, 2, 1),
+            List.of(1, 2, 1),
+            List.of(2, 4, 2),
+            List.of(2, 3, 2),
+            List.of(4, 3, 1)
+        );
 
-        DisjointSet ds1 = new DisjointSet(7);
-        ds1.unionByRank(1, 2);
-        ds1.unionByRank(1, 3);
-        ds1.unionByRank(2, 6);
-        ds1.unionByRank(3, 6);
-        ds1.unionByRank(2, 7);
-        ds1.unionByRank(4, 2);
+        KruskalMst kmst = new KruskalMst();
+        int weight1 = kmst.findMstWeight(edges, 5);
+        System.out.println("Kruskal's MST Weight : " + weight1);
         
-        System.out.println("UBR Nodes 1 & 5 are connected ? " + ds1.areNodesConnected(1, 5));
-        System.out.println("UBR Nodes 1 & 3 are connected ? " + ds1.areNodesConnected(1, 3));
-        
-        DisjointSet ds2 = new DisjointSet(7);
-        ds2.unionBySize(1, 2);
-        ds2.unionBySize(1, 3);
-        ds2.unionBySize(2, 6);
-        ds2.unionBySize(3, 6);
-        ds2.unionBySize(2, 7);
-        ds2.unionBySize(4, 2);
-
-        System.out.println("UBS Nodes 1 & 5 are connected ? " + ds2.areNodesConnected(1, 5));
-        System.out.println("UBS Nodes 1 & 3 are connected ? " + ds2.areNodesConnected(1, 3));
+        PrimMst pmst = new PrimMst();
+        int weight2 = pmst.findMstWeight(edges, 10);
+        System.out.println("Prim's MST Weight : " + weight2);
     }
 }
