@@ -9,21 +9,28 @@ import java.util.*;
  */
 public class AdjMat implements GraphInterface<Unit> {
     private List<List<Unit>> graph;
-    private List<List<Integer>> list;
+    private List<List<Integer>> matrix;
+
+    private final int INF = Integer.MAX_VALUE;
 
     public AdjMat(int nodes) {
         this.graph = new ArrayList<>();
-        this.list = new ArrayList<>();
+        this.matrix = new ArrayList<>();
 
         for (int i = 0; i < nodes; i++) {
+            // Generate dummy graph<Unit> of size V x V with INF weights for unreachable nodes
             List<Unit> graphRow = new ArrayList<>();
             for (int j = 0; j < nodes; j++) {
-                graphRow.add(new Unit(0));
+                graphRow.add(new Unit(INF));
             }
             graph.add(graphRow);
 
-            List<Integer> listRow = new ArrayList<>();
-            list.add(listRow);
+            // Generate dummy matrix<Integer> of size V x V with INF weights for unreachable nodes
+            List<Integer> matrixRow = new ArrayList<>();
+            for (int j = 0; j < nodes; j++) {
+                matrixRow.add(INF);
+            }
+            matrix.add(matrixRow);
         }
     }
 
@@ -49,13 +56,13 @@ public class AdjMat implements GraphInterface<Unit> {
             int v = edge.get(1);
             int w = isWeighted ? edge.get(2) : 0;
 
-            list.get(u).set(v, w);
+            matrix.get(u).set(v, w);
 
             if (!isDirected) {
-                list.get(v).set(u, w);
+                matrix.get(v).set(u, w);
             }
         });
-        return list;
+        return matrix;
     }
 
     @Override
@@ -71,6 +78,28 @@ public class AdjMat implements GraphInterface<Unit> {
             System.out.printf("%2d ", i);
             for (int j = 0; j < graph.get(i).size(); j++) {
                 System.out.printf("%2d ", graph.get(i).get(j).getWeight());
+            }
+            System.out.println();
+        }
+    }
+
+    public void printMatrix() {
+        System.out.println("\nAdjacency Matrix");
+        System.out.print("   ");
+        for (int j = 0; j < matrix.get(0).size(); j++) {
+            System.out.printf("%2d ", j);
+        }
+        System.out.println();
+
+        for (int i = 0; i < matrix.size(); i++) {
+            System.out.printf("%2d ", i);
+            for (int j = 0; j < matrix.get(i).size(); j++) {
+                int v = matrix.get(i).get(j);
+                if (v == INF) {
+                    System.out.printf("%2s ", "I");
+                } else {
+                    System.out.printf("%2d ", v);
+                }
             }
             System.out.println();
         }
