@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ZomniAttack",
+            "request": "launch",
+            "mainClass": "solutions.ZomniAttack",
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
+            "name": "CloudyDays",
+            "request": "launch",
+            "mainClass": "solutions.CloudyDays",
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
             "name": "ShortestPath",
             "request": "launch",
             "mainClass": "topic4_shortest_path.ShortestPath",
