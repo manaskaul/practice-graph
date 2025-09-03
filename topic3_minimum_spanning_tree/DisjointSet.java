@@ -26,14 +26,16 @@ import java.util.*;
  */
 public class DisjointSet {
     private List<Integer> parent;
-    private List<Integer> rank;
-    private List<Integer> size;
+    private List<Integer> rank; // Union by Rank
+    private List<Integer> size; // Union by Size
 
     DisjointSet(int noOfNodes) {
         parent = new ArrayList<>();
         rank = new ArrayList<>();
         size = new ArrayList<>();
 
+        // Every node is its own parent
+        // rank and size of each node is 
         for(int i = 0; i <= noOfNodes; i++) {
             parent.add(i);
             rank.add(0);
@@ -41,10 +43,16 @@ public class DisjointSet {
         }
     }
 
+    // recurrsively sets correct parent for every node
+    // performs path compression
+    // returns ultimate parent of the queried node
     public int getParent(int node) {
+        // if parent of a node is itself we found ultimate parent
         if (node == parent.get(node)) {
             return node;
         }
+        // set the parent of queried node as the ultimate parent
+        // this also performs path compression
         parent.set(node, getParent(parent.get(node)));
         return parent.get(node);
     }
