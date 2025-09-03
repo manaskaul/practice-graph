@@ -2,6 +2,28 @@ package topic3_minimum_spanning_tree;
 
 import java.util.*;
 
+/*
+ * DisjointSet also UnionFind used to check the connected components of graph
+ * (keep track of elements that are split into disjoint (non-overlapping) groups)
+ * 
+ * Supports 2 main operation : 
+ *      Union(x,y) : Merge the groups containing x and y. Ultimate parent for x & y becomes same
+ *      Find(x) : Which group does x belong to? Retruns ultimate parent of x
+ * 
+ * Path compression (Find optimization): Every time you do a Find, flatten the tree structure → makes future finds faster.
+ * Union by rank/size: Always attach the smaller tree under the larger one → keeps trees shallow.
+ * 
+ * Mainly used for connectivity problems:
+ *      Check if two nodes are in the same connected component (like "valid path" problem).
+ *      Kruskal’s algorithm for Minimum Spanning Tree (MST).
+ *      Detecting cycles in an undirected graph.
+ * 
+ * TC: O(aplha(n)) = O(1) per operation
+ * SC: O(N)
+ * 
+ * Building DSU for N nodes = O(N)
+ * Processing E edges (unions) + Q queries (finds) = O((E + Q) α(n)) = O(E + Q) = O(E + V)
+ */
 public class DisjointSet {
     private List<Integer> parent;
     private List<Integer> rank;

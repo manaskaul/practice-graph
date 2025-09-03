@@ -12,6 +12,7 @@ public class KruskalMst {
         List<List<Integer>> sortedEdges = new ArrayList<>(edges);
 
         // Sort edges based on weights
+        // O(E log E)
         Collections.sort(sortedEdges, new Comparator<List<Integer>>() {
             @Override
             public int compare(List<Integer> o1, List<Integer> o2) {
@@ -21,6 +22,7 @@ public class KruskalMst {
 
         // Create Disjoint Set while picking up new smallest edge each time
         DisjointSet ds = new DisjointSet(noOfNodes);
+        
         for (List<Integer> edge : sortedEdges) {
             if (!ds.areNodesConnected(edge.get(0), edge.get(1))) {
                 // if not connected, connect the edges and count the weight
