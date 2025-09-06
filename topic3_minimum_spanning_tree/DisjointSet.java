@@ -34,8 +34,8 @@ public class DisjointSet {
         rank = new ArrayList<>();
         size = new ArrayList<>();
 
-        // Every node is its own parent
-        // rank and size of each node is 
+        // Every node is its own parent initially
+        // rank and size of each node is 0 initially
         for(int i = 0; i <= noOfNodes; i++) {
             parent.add(i);
             rank.add(0);
@@ -67,19 +67,22 @@ public class DisjointSet {
             return;
         }
 
-        if (rank.get(ulp_u) < rank.get(ulp_v)) {
-            // u attaches to v
+        int rank_ulp_u = rank.get(ulp_u);
+        int rank_ulp_v = rank.get(ulp_v);
+
+        if (rank_ulp_u < rank_ulp_v) {
+            // ulp_u attaches to ulp_v
             // no rank change
             parent.set(ulp_u, ulp_v);
-        } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
-            // v attaches to u
+        } else if (rank_ulp_v < rank_ulp_u) {
+            // ulp_v attaches to ulp_u
             // no rank change
             parent.set(ulp_v, ulp_u);
         } else {
-            // v attaches to u
-            // rank of u increases by 1
+            // ulp_v attaches to ulp_u
+            // rank of ulp_u increases by 1
             parent.set(ulp_v, ulp_u);
-            rank.set(ulp_u, rank.get(ulp_u) + 1);
+            rank.set(ulp_u, rank_ulp_u + 1);
         }
     }
 
@@ -93,21 +96,24 @@ public class DisjointSet {
             return;
         }
 
-        if (size.get(ulp_u) < size.get(ulp_v)) {
+        int size_ulp_u = size.get(ulp_u);
+        int size_ulp_v = size.get(ulp_v);
+
+        if (size_ulp_u < size_ulp_v) {
             // u attaches to v
-            // size of v increases
+            // size of ulp_v increases
             parent.set(ulp_u, ulp_v);
-            size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));
-        } else if (size.get(ulp_u) > size.get(ulp_v)) {
+            size.set(ulp_v, size_ulp_u + size_ulp_v);
+        } else if (size_ulp_u > size_ulp_v) {
             // v attaches to u
-            // size of u increases
+            // size of ulp_u increases
             parent.set(ulp_v, ulp_u);
-            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));
+            size.set(ulp_u, size_ulp_u + size_ulp_v);
         } else {
             // v attaches to u
-            // size of u increases
+            // size of ulp_u increases
             parent.set(ulp_v, ulp_u);
-            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));
+            size.set(ulp_u, size_ulp_u + size_ulp_v);
         }
     }
 
