@@ -46,17 +46,16 @@ public class UndirectedUnweighted {
 
     public boolean detectCycleUsingDfs(List<List<Integer>> adjList, int V, int src) {
         boolean[] visited = new boolean[V+1];
-        visited[src] = true;
-
         return dfsCycleDetection(adjList, V, visited, src, -1);
     }
 
     private boolean dfsCycleDetection(List<List<Integer>> adjList, int V, boolean[] visited, int curr, int parent) {
+        visited[curr] = true;
+        
         for(int neighbor : adjList.get(curr)) {
             if(!visited[neighbor]) {
                 // Only return true if the cycle is detected
                 // else check all the nodes
-                visited[neighbor] = true;
                 if(dfsCycleDetection(adjList, V, visited, neighbor, curr)) {
                     return true;
                 }
