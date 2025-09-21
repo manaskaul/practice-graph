@@ -98,5 +98,7 @@ public class ZomniAttack {
         }
 
         System.out.printf("%d %d\n", totalTroops, maxZomnis);
+
+        Map<Integer, Integer> m = new HashMap<>();
     }
 }

@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CycleDetection",
+            "request": "launch",
+            "mainClass": "topic6_cycle_detection.CycleDetection",
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
+            "name": "FloodFill",
+            "request": "launch",
+            "mainClass": "topic5_flood_fill.FloodFill",
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
             "name": "ZomniAttack",
             "request": "launch",
             "mainClass": "solutions.ZomniAttack",
