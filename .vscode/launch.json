@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BipartiteGraph",
+            "request": "launch",
+            "mainClass": "topic7_bipartite_graph.BipartiteGraph",
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
             "name": "CycleDetection",
             "request": "launch",
             "mainClass": "topic6_cycle_detection.CycleDetection",
