@@ -10,7 +10,7 @@ import java.util.Queue;
  * TC: O(V+E)
  * SC: O(V) 
  */
-public class UndirectedUnweighted {
+public class UndirectedGraphCycleDetection {
     
     
     public boolean detectCycleUsingBfs(List<List<Integer>> adjList, int V, int src) {
