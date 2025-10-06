@@ -12,6 +12,8 @@ import java.util.List;
  * TC: O(V+E)
  * SC: O(V)
  */
+// Can also make do with using a single visited array, by using int[] visited instead of boolean
+// 0 would mark unvisited, 1 would mark global visited, 2 would mark path visited
 public class DirectedGraphCycleDetection {
     
     public boolean detectCycleUsingDfs(List<List<Integer>> adjList, int V, int src) {

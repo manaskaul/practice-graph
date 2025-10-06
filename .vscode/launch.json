@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TopologicalSort",
+            "request": "launch",
+            "mainClass": "topic8_topological_sort.TopologicalSort",
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
             "name": "BipartiteGraph",
             "request": "launch",
             "mainClass": "topic7_bipartite_graph.BipartiteGraph",
