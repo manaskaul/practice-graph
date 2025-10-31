@@ -19,23 +19,29 @@ import java.util.*;
  */
 public class BfsTopoSort {
     public List<Integer> bfsTopologicalSort(List<List<Integer>> adjList, int V) {
+        
         List<Integer> topoSortedList = new ArrayList<>();
 
         int[] indegree = new int[V];
         Queue<Integer> q = new LinkedList<>();
 
+        // Calculate indegree of all nodes
         for(int i=0; i<V; i++) {
             for(int adj : adjList.get(i)) {
                 indegree[adj] += 1;
             }
         }
 
+        // add nodes with indegree 0 into queue
         for(int i=0; i<V; i++) {
             if(indegree[i] == 0) {
                 q.offer(i);
             }
         }
 
+        // process each node with indegree 0 
+        // remove it from the graph and and reduce indegree of adjacent nodes by 1
+        // add adjacent node in queue if it's indegree becomes 0
         while(!q.isEmpty()) {
             int node = q.poll();
             topoSortedList.add(node);

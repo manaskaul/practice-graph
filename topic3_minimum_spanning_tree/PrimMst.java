@@ -9,7 +9,7 @@ public class PrimMst {
 
     // TC : O(E log E) = O(E log E)
     // SC : O(E + V) = O(V+E)
-    // Use PriorityQueue (min-heap) to keep track of lest weighted edge
+    // Use PriorityQueue (min-heap) to keep track of least weighted edge
     // Use Visited array to keep track of nodes already added to mst
     public int findMstWeight(List<List<Integer>> edges, int noOfNodes) {
 

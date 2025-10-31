@@ -114,7 +114,10 @@ public class BFS {
                 if (!visited.contains(neighbor.getTarget().getValue())) {
                     queue.offer(neighbor.getTarget());
                     visited.add(neighbor.getTarget().getValue());
-                    nodeLevel.putIfAbsent(neighbor.getTarget().getValue(), nodeLevel.getOrDefault(n.getValue(), -1) + 1);
+                    nodeLevel.putIfAbsent(
+                        neighbor.getTarget().getValue(), 
+                        nodeLevel.getOrDefault(n.getValue(), -1) + 1
+                    );
                 }
             });
         }

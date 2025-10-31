@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "solutions.Test",
+            "projectName": "practice-graphs_7da68bc0"
+        },
+        {
+            "type": "java",
             "name": "TopologicalSort",
             "request": "launch",
             "mainClass": "topic8_topological_sort.TopologicalSort",
