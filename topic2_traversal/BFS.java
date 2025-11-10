@@ -14,7 +14,11 @@ import topic0_structure.Node;
  * Applications -
  * 1. Determine the level of each node in the given Tree/Graph
  * 2. 0-1 BFS : Find shortest path in 0-1 weighted graph
- * 
+ * 3. Finding shortest path from source to dest.
+ *      NOTE:   Because in unweighted graphs, BFS guarantees that the first time you reach a node, 
+ *              you’ve reached it via the shortest possible path (minimum number of moves). 
+ *              So you will never find a shorter path later.
+ *              Dijkstra's Algo needed for weighted edges and different costs.
  */
 public class BFS {
     public void traverse(Node node) {
