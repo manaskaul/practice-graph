@@ -35,7 +35,7 @@ public class DisjointSet {
         size = new ArrayList<>();
 
         // Every node is its own parent initially
-        // rank and size of each node is 0 initially
+        // rank as 0 and size as 1 for each node initially
         for(int i = 0; i <= noOfNodes; i++) {
             parent.add(i);
             rank.add(0);

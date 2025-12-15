@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Find source node from every node to every other node
+ * Find distance from every node to every other node
  * Multiple source shortest path algo
  * Helps to detect negative cycle as well
  * 
@@ -40,7 +40,14 @@ public class FloydWarshall {
                     }
 
 
-                    // costMat[srcNode][tgtNode] = Math.min(costMat[srcNode][tgtNode], costMat[srcNode][viaNode] + costMat[viaNode][tgtNode]);
+                    /**
+                     *  costMat[srcNode][tgtNode] = Math.min(
+                     *      costMat[srcNode][tgtNode], 
+                     *      costMat[srcNode][viaNode] + costMat[viaNode][tgtNode]
+                     *  );
+                     * 
+                     *  
+                     */
                     adjMat.get(srcNode).set(tgtNode, 
                         Math.min(
                             adjMat.get(srcNode).get(tgtNode), 

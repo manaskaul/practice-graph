@@ -6,7 +6,7 @@ import java.util.*;
  * Only valid on Directed Acyclic Graphs
  * for u -> v, u appears before v in linear ordering
  * 
- * Using a Indegree array to store indegree cound for every node, and Queue to store the actual order
+ * Using a Indegree array to store indegree count for every node, and Queue to store the actual order
  * 
  * 1. Calculate the indegree (no of edges coming into a node) of all the nodes
  * 2. Add all nodes into queue with indegree 0 (there will be atleast 1 for DAG)
