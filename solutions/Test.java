@@ -43,7 +43,5 @@ public class Test {
             }
             System.out.printf("\n");
         });
-
-        Set<String> set = new HashSet<>();
     }
 }
