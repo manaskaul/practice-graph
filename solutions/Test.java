@@ -3,45 +3,60 @@ package solutions;
 import java.util.*;
 
 public class Test {
-    public static void main(String[] args) {
-        // Map<String, Integer> map = new HashMap<>();
-        // map.put("abc", 1);
-        // map.put("abc", -1);
-        // System.out.println(map.get("abc"));
+    private static int INF = Integer.MAX_VALUE - 10;
 
-        // String s = "xyz";
-        // char[] c = s.toCharArray();
-        
-        // String x = String.valueOf(c);
-        // System.out.printf("%s\n", x);
-        
-        // c[1] = (char) ('a' + 3);
-        // String y = String.valueOf(c);
-        // System.out.printf("%s\n", y);
+  public static void main(String[] args) {
+        System.out.println("Hello, World!");
 
-        // char y = (char) ('a' + 3);
-        // System.out.printf("%c\n", y);
+        int x = 6;
+        int a = 3;
 
-        Map<String, List<Integer>> map = new HashMap<>();
+        int y = (int) Math.ceil(a/x);
+        System.out.println(y);
 
-        map.forEach((key, value) -> {
-            System.out.printf("%s : ", key);
-            for(int n : value) {
-                System.out.printf("<%d>", n);
-            }
-            System.out.printf("\n");
-        });
+        // List<Integer> lst = new ArrayList<>();
+        // lst.add(0);
+        // lst.add(-0);
+        // for (int i : lst) {
+        //     System.out.println(i);
+        // }
 
-        map.getOrDefault("a", new ArrayList<>()).add(1);
-        map.getOrDefault("b", new ArrayList<>()).add(2);
-        map.getOrDefault("a", new ArrayList<>()).add(2);
+        // char[] B = new char[]{'0','1'};
+        // for(char x : B) {
+        //     for(char y : B) {
+        //         for(char z : B) {
+        //             char b1 = x, b2 = y, c = z;
 
-        map.forEach((key, value) -> {
-            System.out.printf("%s : ", key);
-            for(int n : value) {
-                System.out.printf("<%d>", n);
-            }
-            System.out.printf("\n");
-        });
+        //             char[] sum1 = sum(b1, b2);
+        //             char s1 = sum1[0]; 
+        //             char c1 = sum1[1];
+
+        //             char[] sum2 = sum(s1, c);
+        //             char s2 = sum2[0];
+        //             char c2 = sum2[1];
+
+        //             c = c2;
+                    
+        //             System.out.printf("\nb1 = %c\tb2 = %c\tc = %c\n", s1, s2, c);
+        //             System.out.printf("s = %c\tc = %c\n", s2, c);
+        //         }
+        //     }
+        // }
+
+  }
+
+  private static char[] sum(char s1, char s2) {
+        if(s1 == '0' && s2 == '0') {
+            return new char[]{'0','0'};
+        }
+        else if(s1 == '0' && s2 == '1') {
+            return new char[]{'1','0'};
+        }
+        else if(s1 == '1' && s2 == '0') {
+            return new char[]{'1','0'};
+        }
+        else { // (s1 == '1' && s2 == '1')
+            return new char[]{'0','1'};
+        }
     }
 }

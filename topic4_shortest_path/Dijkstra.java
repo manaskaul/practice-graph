@@ -39,8 +39,9 @@ public class Dijkstra {
                 int tgtNode = tgt.getNode();
                 int tgtWeight = tgt.getWeight();
 
+                // Distance to reach
                 int totalWgt = srcWeight + tgtWeight;
-                if (dist[tgtNode] > totalWgt) {
+                if (totalWgt < dist[tgtNode]) {
                     dist[tgtNode] = totalWgt;
                     pq.add(List.of(tgtNode, totalWgt));
                 }
